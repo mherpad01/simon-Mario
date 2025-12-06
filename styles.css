@@ -1,0 +1,128 @@
+@font-face {
+  font-family: Ice;
+  src: url(fonts/Ice-Cold-Solid-LH.otf);
+}
+
+body {
+  height: 100vh;
+  background-image: url(img.jpg);
+  backdrop-filter: blur(5px);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+body.ocultar-cursor {
+  cursor: none;
+}
+
+#tablero {
+  height: 450px;
+  width: 450px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-flow: row wrap;
+
+  &:hover {
+    transition: 10s ease-in;
+    opacity: 0.7;
+  }
+
+  .casilla {
+    margin: 0 auto;
+    width: 222px;
+    height: 222px;
+    border: 1px solid rgb(27, 27, 27);
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+  }
+}
+
+
+#empezarJuego {
+  width: 17rem;
+  padding: 1rem;
+  border: 1px solid white;
+  background-color: rgb(169, 169, 169);
+  margin-top: 4rem;
+
+  text-align: center;
+  color: rgb(253, 253, 253);
+  font-size: 30px;
+  font-family: Ice;
+  cursor: pointer;
+
+  &:hover {
+    transition: 0.5s ease-in;
+    background-color: rgb(126, 55, 241);
+  }
+}
+
+#juegoVoz {
+  width: 17rem;
+  padding: 1rem;
+  border: 1px solid white;
+  background-color: rgb(169, 169, 169);
+  margin-top: 4rem;
+
+  text-align: center;
+  color: rgb(253, 253, 253);
+  font-size: 30px;
+  font-family: Ice;
+  cursor: pointer;
+
+  &:hover {
+    transition: 0.5s ease-in;
+    background-color: rgb(126, 55, 241);
+  }
+}
+
+#rojo {
+  background-color: pink;
+}
+
+#azul {
+  background-color: lightblue;
+}
+
+#amarillo {
+  background-color: lightyellow;
+}
+
+#verde {
+  background-color: lightgreen;
+}
+
+#mensajes {
+  margin-top: 2rem;
+  font-size: 22px;
+  font-family: Ice;
+  color: white;
+  text-align: center;
+  width: 300px;
+}
+
+
+
+
+/*ANIMCAION PARA VIBRAR*/
+
+@keyframes vibrar {
+  0% { transform: translate(0); }
+  25% { transform: translate(3px); }
+  50% { transform: translate(-3px); }
+  75% { transform: translate(3px); }
+  100% { transform: translate(0); }
+}
+
+.casilla.error {
+  animation: vibrar 0.3s ease;
+}
