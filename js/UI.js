@@ -76,11 +76,11 @@ if (juegoVoz && (reconocimiento !== null)) {
         modoVoz = true;
         juegoVoz.hidden = true;
         botonJugar.hidden = true;
-        
+
         UI.mensajes("VOZ ACTIVA!");
-        
+
         SimonGame.jugar(SimonGame.longitudInicial);
-        
+
         setTimeout(async () => {
             await SimonGame.siguiente();
             UI.mensajes("HABLA: Rojo, Azul, Verde, Amarillo");
@@ -166,7 +166,7 @@ export const UI = {
         if ((reconocimiento) && (modoVoz)) {
             try {
                 reconocimiento.stop();
-            } catch(e) {
+            } catch (e) {
                 console.log("YA ESTABA DETENIDO.");
             }
             modoVoz = false;
@@ -210,8 +210,6 @@ botonJugar.addEventListener('click', () => {
     juegoVoz.hidden = true;
     SimonGame.jugar(SimonGame.longitudInicial);
     SimonGame.siguiente();
-
-
 });
 
 
